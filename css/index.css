@@ -117,7 +117,7 @@
 
 /* Start Services */
 .services-section {
-    margin: 80px 0;
+    margin: 0;
     padding: 80px 0;
     scroll-margin-top: var(--scroll-margin-top);
 }
@@ -181,7 +181,7 @@
 /* End Services */
 /* Start Why Us */
 .why-choose-us-section {
-    margin: 80px 0;
+    margin: 0;
     padding: 40px 0;
     scroll-margin-top: var(--scroll-margin-top);
 
@@ -263,7 +263,7 @@
 /* Start Partners */
 .partners-section {
     padding: 40px 0;
-    margin: 80px 0;
+    margin: 0;
 }
 
 .partners-section .container .partners-logos {
@@ -319,7 +319,7 @@
 /* End Partners */
 /* Start FAQ */
 .faq-section {
-    margin: 80px 0;
+    margin: 0;
     padding: 40px 0;
     scroll-margin-top: var(--scroll-margin-top);
 
@@ -428,7 +428,7 @@
 /* End FAQ */
 /* Start Contact */
 .contact-section {
-    margin: 80px 0;
+    margin: 0;
     padding: 40px 0;
     scroll-margin-top: var(--scroll-margin-top);
 
@@ -478,6 +478,12 @@
 }
 .contact-section .contact-content .contact-info .contact-item .contact-text {
     text-align: left;
+}
+
+.contact-section .contact-content .contact-info .contact-item .contact-text a {
+    color: white;
+    opacity: 0.7;
+    
 }
 
 .contact-section .contact-content .contact-form {
@@ -612,7 +618,7 @@
 /* End Contact */
 /* Start Map */
 .map-section {
-    margin: 80px 0;
+    margin: 0;
     padding: 40px 0;
 }
 .map-section .map-header {

@@ -15,71 +15,9 @@ Table of Content
 /* ------------------------------ */
 /* 1. Global layout and resets */
 /* ------------------------------ */
-/* Font: SomarSans */
-@font-face {
-    font-family: 'SomarSans';
-    src: url('/fonts/SomarSans-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SomarSans';
-    src: url('/fonts/SomarSans-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SomarSans';
-    src: url('/fonts/SomarSans-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SomarSans';
-    src: url('/fonts/SomarSans-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SomarSans';
-    src: url('/fonts/SomarSans-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SomarSans';
-    src: url('/fonts/SomarSans-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SomarSans';
-    src: url('/fonts/SomarSans-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SomarSans';
-    src: url('/fonts/SomarSans-ExtraLight.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SomarSans';
-    src: url('/fonts/SomarSans-Thin.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-}
+/* Font: IBM Plex Sans Arabic */
 /* Global Reset */
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -88,7 +26,7 @@ Table of Content
 }
 
 :root {
-    --main-font: 'SomarSans', sans-serif;
+    --main-font: 'IBM Plex Sans Arabic', sans-serif;
     --heading-color: rgba(22, 28, 45, 1);
     --text-color: rgba(72, 72, 72, 1);
     --primary-color: rgba(8, 33, 119, 1);
@@ -109,12 +47,12 @@ Table of Content
 .section-description {
     padding-top: 16px;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 30px;
     color: var(--heading-color);
 }
 @media (max-width: 991px) {
     .section-description {
-        font-size: 17px;
+        font-size: 25px;
     }
 }
 html {
@@ -223,7 +161,7 @@ body::-webkit-scrollbar-thumb {
 
 .header .logo img {
     /* width: 135px; */
-    height: 100px;
+    /* height: 100px; */
 }
 
 .header .mobile-menu {
@@ -476,7 +414,7 @@ footer .container:first-child {
     gap: 30px;
 }
 .footer-column {
-    flex: 1 1 200px; 
+    flex: 1 1 150px; 
 }
 .footer-column:nth-child(1) {
     flex: 0 0 100px; 
@@ -537,6 +475,22 @@ footer .footer-bottom .copyright {
 
 footer .footer-bottom .copyright {
     margin: 0;
+}
+footer .footer-bottom a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .footer-bottom a i {
+    background: linear-gradient(90deg, #082177 0.08%, #E8009E 99.44%);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
 }
 
 footer .footer-bottom a {
