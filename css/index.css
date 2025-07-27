@@ -192,7 +192,7 @@
 }
 
 .why-choose-us-section .container .features-grid {
-    background-image: url('/image/why_us.png');
+    background-image: url('/image/why_us.webp');
     background-size: cover;
     background-repeat: no-repeat;
     padding: 90px 40px 12px;
@@ -278,7 +278,7 @@
     height: 80px;
 }
 
-.partners-logos .partner-logo:nth-child(1) img {
+/* .partners-logos .partner-logo:nth-child(1) img {
     width: 148px
 }
 .partners-logos .partner-logo:nth-child(2) img {
@@ -295,7 +295,7 @@
 }
 .partners-logos .partner-logo:nth-child(6) img {
     width: 156px;
-}
+} */
 
 /* Media Queries */
 /* <= 1200px */
@@ -436,7 +436,7 @@
 
 .contact-section .contact-content {
     margin-top: 40px;
-    background-image: url('/image/contact.png');
+    background-image: url('/image/contact.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

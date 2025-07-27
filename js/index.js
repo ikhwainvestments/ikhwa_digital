@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 try {
-                    const response = await fetch("http://api.ikhwadigital.com/api/ikhwadigital/contact", {
+                    const response = await fetch("/contact-proxy.php", {
                         method: "POST",
                         body: formData,
                     });
@@ -125,15 +125,3 @@ function showAlert(message, type) {
 }
 
 // ------------------------------------------ //
-if (window.innerWidth < 768) {
-    AOS.init({
-        disable: true
-    });
-} else {
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false
-    });
-}
