@@ -97,8 +97,8 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-	border-radius: 0;
 	background: grey;
+    border-radius: 10px;
 }
 
 /* ------------------------------ */

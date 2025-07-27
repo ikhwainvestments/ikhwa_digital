@@ -485,7 +485,7 @@
     opacity: 0.7;
 }
 .contact-section .contact-content .contact-form {
-    max-width: 484px;
+    width: 400px;
     padding: 40px;
     background-color: white;
     border-radius: 16px;
@@ -604,6 +604,9 @@
 /* Media Queries */
 /* 991px */
 @media (max-width: 991px) {
+    .contact-section .contact-content .contact-form {
+    width: 100%;
+}
     .contact-section .contact-content {
         align-items: center;
         flex-direction: column;

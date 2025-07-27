@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
         acceptedFiles: ".jpg,.jpeg,.png,.pdf,.xlsx,.docx",
         addRemoveLinks: true,
         dictDefaultMessage: "",
-        dictFileTooBig: "الملف كبير جداً ({{filesize}}MB). الحد الأقصى: {{maxFilesize}}MB.",
-        dictInvalidFileType: "هذا النوع من الملفات غير مسموح به.",
-        dictRemoveFile: "حذف الملف",
+        dictFileTooBig: "File is too big ({{filesize}}MB). Maximum size: {{maxFilesize}}MB.",
+        dictInvalidFileType: "This file type is not allowed.",
+        dictRemoveFile: "Remove file",
         init: function() {
             this.on("addedfile", function(file) {
                 if (file.name.length > 30) {
@@ -44,27 +44,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 const phone = document.getElementById("phone").value.trim();
                 
                 if (!name) {
-                    showAlert("حقل الاسم مطلوب", "danger");
+                    showAlert("Name field is required", "danger");
                     return;
                 }
                 
                 if (!email) {
-                    showAlert("حقل البريد الإلكتروني مطلوب", "danger");
+                    showAlert("Email field is required", "danger");
                     return;
                 } else if (!/^\S+@\S+\.\S+$/.test(email)) {
-                    showAlert("البريد الإلكتروني غير صالح", "danger");
+                    showAlert("Invalid email format", "danger");
                     return;
                 }
                 
                 if (!phone) {
-                    showAlert("حقل الهاتف مطلوب", "danger");
+                    showAlert("Phone field is required", "danger");
                     return;
                 }
 
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = `
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                    جاري الإرسال...
+                    Sending...
                 `;
 
                 const formData = new FormData();
@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 formData.append("phone", phone);
                 formData.append("description", document.getElementById("description").value);
                 
-                if (document.getElementById("radio1").checked) formData.append("option", "استفسار");
-                else if (document.getElementById("radio2").checked) formData.append("option", "اقتراح");
-                else if (document.getElementById("radio3").checked) formData.append("option", "شكوى");
+                if (document.getElementById("radio1").checked) formData.append("option", "Inquiry");
+                else if (document.getElementById("radio2").checked) formData.append("option", "Suggestion");
+                else if (document.getElementById("radio3").checked) formData.append("option", "Complaint");
 
                 if (myDropzone.files.length > 0) {
                     formData.append("file", myDropzone.files[0]);
@@ -90,20 +90,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     const result = await response.json();
                     
                     if (response.ok) {
-                        showAlert("تم إرسال الرسالة بنجاح", "success");
+                        showAlert("Message sent successfully", "success");
                         
                         form.reset();
                         myDropzone.removeAllFiles();
                     } else {
-                        showAlert(result.message || "فشل في إرسال الرسالة", "danger");
+                        showAlert(result.message || "Failed to send message", "danger");
                     }
                     
                 } catch (error) {
-                    showAlert("حدث خطأ في الاتصال بالخادم", "danger");
+                    showAlert("Error connecting to server", "danger");
                     console.error(error);
                 } finally {
                     submitBtn.disabled = false;
-                    submitBtn.textContent = "إرسال";
+                    submitBtn.textContent = "Send";
                 }
             });
         }
@@ -122,4 +122,18 @@ function showAlert(message, type) {
     form.parentNode.insertBefore(alertDiv, form.nextSibling);
     
     setTimeout(() => alertDiv.remove(), 5000);
+}
+
+// ------------------------------------------ //
+if (window.innerWidth < 768) {
+    AOS.init({
+        disable: true
+    });
+} else {
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
 }
